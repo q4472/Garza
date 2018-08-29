@@ -1,4 +1,4 @@
-﻿using FarmSib.Base.Data;
+﻿using Garza.Base.Data;
 using Nskd;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Data;
 using System.Text;
 using System.Web;
 
-namespace FarmSib.AreasAgrs.Areas.Agrs.Models
+namespace Garza.AreasAgrs.Areas.Agrs.Models
 {
     public class F0Model
     {

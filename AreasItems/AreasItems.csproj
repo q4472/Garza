@@ -285,7 +285,6 @@
     <Content Include="Areas\Tn\Views\MnnSelector.cshtml" />
     <Content Include="Areas\Tn\Views\SrcSelector.cshtml" />
     <Content Include="Areas\Tn\Views\TnInstructions.cshtml" />
-    <Content Include="Areas\Tn\Views\TnSelector.cshtml" />
     <Content Include="Areas\Tn\Views\Web.config" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />

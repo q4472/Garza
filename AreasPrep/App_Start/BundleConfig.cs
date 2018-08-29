@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace FarmSib.AreasPrep
+namespace Garza.AreasPrep
 {
     public class BundleConfig
     {

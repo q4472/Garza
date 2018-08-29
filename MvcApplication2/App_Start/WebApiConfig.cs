@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace FarmSib.MvcApplication2
+namespace Garza.MvcApplication2
 {
     public static class WebApiConfig
     {

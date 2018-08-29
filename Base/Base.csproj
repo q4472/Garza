@@ -52,20 +52,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\DgvController.cs" />
-    <Compile Include="Controllers\FsController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ItemsController.cs" />
-    <Compile Include="Data\HomeData.cs" />
-    <Compile Include="Lib\Nskd.Convert.cs" />
-    <Compile Include="Lib\Nskd.Npc.cs" />
-    <Compile Include="Lib\Utility.cs" />
-    <Compile Include="Models\DataGridView.cs" />
-    <Compile Include="Models\DgvModel.cs" />
-    <Compile Include="Models\FileSystem.cs" />
-    <Compile Include="Models\HomeModel.cs" />
-    <Compile Include="Models\NskdExcel.cs" />
-    <Compile Include="Models\OpenXmlDocument.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -245,7 +245,6 @@
     <Content Include="Areas\Tn\Views\MnnSelector.cshtml" />
     <Content Include="Areas\Tn\Views\SrcSelector.cshtml" />
     <Content Include="Areas\Tn\Views\TnInstructions.cshtml" />
-    <Content Include="Areas\Tn\Views\TnSelector.cshtml" />
     <Content Include="Areas\Tn\Views\Web.config" />
     <None Include="Properties\PublishProfiles\AreasPrer.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

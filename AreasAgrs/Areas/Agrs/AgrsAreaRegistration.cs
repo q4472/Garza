@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace FarmSib.AreasAgrs.Areas.Agrs
+namespace Garza.AreasAgrs.Areas.Agrs
 {
     public class AgrsAreaRegistration : AreaRegistration
     {

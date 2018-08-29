@@ -1,5 +1,5 @@
 ﻿using AreasPrep.Areas.Env.Models;
-using FarmSib.Base.Data;
+using Garza.Base.Data;
 using Nskd;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
 using System.Xml;
-using FarmSib.AreasPrep;
+using Garza.AreasPrep;
 
 namespace AreasPrep.Areas.Prep.Models
 {

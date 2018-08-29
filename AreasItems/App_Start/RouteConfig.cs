@@ -15,18 +15,6 @@ namespace AreasItems
 
             routes.MapRoute(
                 name: null,
-                url: "Items/GetLP/{*pathInfo}",
-                defaults: new { controller = "Items", action = "GetLP" }
-            );
-
-            routes.MapRoute(
-                name: null,
-                url: "Items/GetTnItems/{*pathInfo}",
-                defaults: new { controller = "Items", action = "GetTnItems" }
-            );
-
-            routes.MapRoute(
-                name: null,
                 url: "Dgv/{*pathInfo}",
                 defaults: new { controller = "Dgv", action = "Index" }
             );

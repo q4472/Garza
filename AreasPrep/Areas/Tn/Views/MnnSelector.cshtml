@@ -2,7 +2,7 @@
     String srcList = (String)ViewData["SrcList"];
     String[] srcs = ((String.IsNullOrWhiteSpace(srcList)) ? null : srcList.Split(','));
 
-    System.Data.DataTable dt = FarmSib.Base.Data.HomeData.Home.GetMnnItems(srcs);
+    System.Data.DataTable dt = Garza.Base.Data.HomeData.Home.GetMnnItems(srcs);
 }
 <div id="p_mnn_selector">
     <select style="display: none;">

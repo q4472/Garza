@@ -1,11 +1,11 @@
-﻿using FarmSib.AreasAgrs.Areas.Agrs.Models;
+﻿using Garza.AreasAgrs.Areas.Agrs.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Web;
 using System.Web.Mvc;
 
-namespace FarmSib.AreasAgrs.Areas.Agrs.Controllers
+namespace Garza.AreasAgrs.Areas.Agrs.Controllers
 {
     public class F1Controller : Controller
     {

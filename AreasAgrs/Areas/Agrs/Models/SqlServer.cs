@@ -1,4 +1,4 @@
-﻿using FarmSib.Base.Data;
+﻿using Garza.Base.Data;
 using Nskd;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Data.OleDb;
 //using System.Windows.Data;
 //using WpfAgr1.Metadata;
 
-namespace FarmSib.AreasAgrs.Areas.Agrs.Models
+namespace Garza.AreasAgrs.Areas.Agrs.Models
 {
     public class Ss //: IDisposable
     {

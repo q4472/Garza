@@ -25,52 +25,8 @@ namespace AreasItems.Data
                         rqp.Parameters[i] = new RequestParameter(name, value);
                     }
                 }
-                dt = FarmSib.Base.Data.HomeData.GetFirstTable(FarmSib.Base.Data.HomeData.Execute(rqp));
+                dt = Garza.Base.Data.HomeData.GetFirstTable(Garza.Base.Data.HomeData.Execute(rqp));
                 return dt;
-            }
-            public static DataSet GetTnItems(String[] srcs, String[] terms, String mnn, Boolean exactly, Boolean eRu, Int32 pageNumber)
-            {
-                DataSet ds = null;
-                RequestPackage rqp = new RequestPackage
-                {
-                    Command = "[dbo].[тн]"
-                };
-                Int32 pi = 0;
-                if (srcs != null)
-                {
-                    Int32 len =
-                        Math.Min(6, ((srcs == null) ? 0 : srcs.Length)) +   // srcs
-                        Math.Min(9, ((terms == null) ? 0 : terms.Length)) + // terms
-                        ((mnn == null) ? 0 : 1) +                           // mnn
-                        1 +                                                 // exactly
-                        1 +                                                 // eRu
-                        1;                                                  // pageNumber
-                    rqp.Parameters = new RequestParameter[len];
-                    for (int i = 0; i < Math.Min(6, srcs.Length); i++)
-                    {
-                        String name = "src" + (i + 1).ToString();
-                        String value = srcs[i];
-                        rqp.Parameters[pi++] = new RequestParameter(name, value);
-                    }
-                }
-                if (terms != null)
-                {
-                    for (int i = 0; i < Math.Min(9, terms.Length); i++)
-                    {
-                        String name = "term" + (i + 1).ToString();
-                        String value = terms[i];
-                        rqp.Parameters[pi++] = new RequestParameter(name, value);
-                    }
-                }
-                if (mnn != null)
-                {
-                    rqp.Parameters[pi++] = new RequestParameter("mnn", mnn);
-                }
-                rqp.Parameters[pi++] = new RequestParameter("exactly", exactly);
-                rqp.Parameters[pi++] = new RequestParameter("eRu", eRu);
-                rqp.Parameters[pi++] = new RequestParameter("PageNumber", pageNumber);
-                ds = FarmSib.Base.Data.HomeData.Execute(rqp);
-                return ds;
             }
             public static DataSet GetTnItemsLP(String rn)
             {
@@ -79,7 +35,7 @@ namespace AreasItems.Data
                 rqp.Command = "[dbo].[тн_цены]";
                 rqp.Parameters = new RequestParameter[1];
                 rqp.Parameters[0] = new RequestParameter("rn", rn);
-                ds = FarmSib.Base.Data.HomeData.Execute(rqp);
+                ds = Garza.Base.Data.HomeData.Execute(rqp);
                 return ds;
             }
         }
@@ -90,7 +46,7 @@ namespace AreasItems.Data
                 DataTable dt = null;
                 // меняем только команду
                 rqp.Command = "[Goods].[dbo].[item_groups_get]";
-                dt = FarmSib.Base.Data.HomeData.GetFirstTable(FarmSib.Base.Data.HomeData.Execute(rqp));
+                dt = Garza.Base.Data.HomeData.GetFirstTable(Garza.Base.Data.HomeData.Execute(rqp));
                 return dt;
             }
             public static DataTable LoadItems(RequestPackage rqp)
@@ -98,7 +54,7 @@ namespace AreasItems.Data
                 DataTable dt = null;
                 // меняем только команду
                 rqp.Command = "[Goods].[dbo].[items_get]";
-                dt = FarmSib.Base.Data.HomeData.GetFirstTable(FarmSib.Base.Data.HomeData.Execute(rqp));
+                dt = Garza.Base.Data.HomeData.GetFirstTable(Garza.Base.Data.HomeData.Execute(rqp));
                 return dt;
             }
             public static DataTable UpsertGroup(RequestPackage rqp)
@@ -126,7 +82,7 @@ namespace AreasItems.Data
                     case "Items.Groups.GroupPart.SelectGroup":
                         // меняем только команду
                         rqp.Command = "[Goods].[dbo].[item_groups_get_items_in_group]";
-                        dt = FarmSib.Base.Data.HomeData.GetFirstTable(FarmSib.Base.Data.HomeData.Execute(rqp));
+                        dt = Garza.Base.Data.HomeData.GetFirstTable(Garza.Base.Data.HomeData.Execute(rqp));
                         break;
                     default:
                         break;
@@ -173,8 +129,8 @@ namespace AreasItems.Data
                 rqp.SessionId = new Guid();
                 rqp.Command = "[Grls].[dbo].[рз_получить_сслылку_на_копию_ру]";
                 rqp.Parameters = new RequestParameter[] { new RequestParameter("id", copyCode) };
-                ResponsePackage rsp = FarmSib.Base.Data.HomeData.ExecuteInSql(rqp);
-                uri = FarmSib.Base.Data.HomeData.GetScalar(rsp.Data) as String;
+                ResponsePackage rsp = Garza.Base.Data.HomeData.ExecuteInSql(rqp);
+                uri = Garza.Base.Data.HomeData.GetScalar(rsp.Data) as String;
                 return uri;
             }
             public static String[] GetInstructionsLinks(Guid id)
@@ -184,10 +140,10 @@ namespace AreasItems.Data
                 rqp.SessionId = new Guid();
                 rqp.Command = "[Grls].[dbo].[рз_получить_сслылки_на_инструкции]";
                 rqp.Parameters = new RequestParameter[] { new RequestParameter("Код_в_источнике", id) };
-                ResponsePackage rsp = FarmSib.Base.Data.HomeData.ExecuteInSql(rqp);
+                ResponsePackage rsp = Garza.Base.Data.HomeData.ExecuteInSql(rqp);
                 if (rsp != null)
                 {
-                    DataTable dt = FarmSib.Base.Data.HomeData.GetFirstTable(rsp.Data);
+                    DataTable dt = Garza.Base.Data.HomeData.GetFirstTable(rsp.Data);
                     if (dt != null && dt.Rows.Count == 1 && dt.Columns.Count == 2)
                     {
                         iLinks[0] = dt.Rows[0][0] as String;
@@ -207,7 +163,7 @@ namespace AreasItems.Data
                     new RequestParameter { Name = "f_code", Value = fCode },
                     new RequestParameter { Name = "u_code", Value = uCode }
                 };
-                DataSet ds = FarmSib.Base.Data.HomeData.Execute(rqp);
+                DataSet ds = Garza.Base.Data.HomeData.Execute(rqp);
                 return ds;
             }
             public static DataSet GetUData(Guid sessionId, String fCode)
@@ -219,7 +175,7 @@ namespace AreasItems.Data
                     new RequestParameter { Name = "session_id", Value = sessionId },
                     new RequestParameter { Name = "f_code", Value = fCode }
                 };
-                DataSet ds = FarmSib.Base.Data.HomeData.Execute(rqp);
+                DataSet ds = Garza.Base.Data.HomeData.Execute(rqp);
                 return ds;
             }
         }
